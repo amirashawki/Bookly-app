@@ -12,7 +12,7 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 12),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -20,10 +20,8 @@ class HomeViewBody extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-
-            cardofBook(),
-            // listOfBooks(),
-          const  Text('Best Saller')
+            listOfBooks(),
+            const Text('Best Saller')
           ],
         ),
       ),

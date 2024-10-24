@@ -1,4 +1,3 @@
-
 import 'package:bookly/Features/home/presenation/views/widgets/card_Book.dart';
 import 'package:flutter/material.dart';
 
@@ -10,13 +9,15 @@ class listOfBooks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: MediaQuery.of(context).size.height * 0.25,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          shrinkWrap: true,
           itemCount: 6,
           itemBuilder: (context, index) {
-            return cardofBook();
+            return Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: cardofBook(),
+            );
           }),
     );
   }
