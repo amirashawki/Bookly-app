@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presenation/views/widgets/best_seller_item.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/card_Book.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/custom_appBar.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/list_of_books.dart';
@@ -14,22 +15,36 @@ class HomeViewBody extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            customAppBar(),
-            const SizedBox(
-              height: 20,
-            ),
-            listOfBooks(),
-            const SizedBox(
-              height: 30,
-            ),
-            Text(
-              'Best Saller',
-              style: Styles.titleMedium,
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              customAppBar(),
+              const SizedBox(
+                height: 20,
+              ),
+              listOfBooks(),
+              const SizedBox(
+                height: 30,
+              ),
+              Text(
+                'Best Saller',
+                style: Styles.textStyle18,
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: 6,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: BestSellerItem(),
+                    );
+                  }),
+            ],
+          ),
         ),
       ),
     );

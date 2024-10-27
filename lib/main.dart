@@ -15,7 +15,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor),
+      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor: kPrimaryColor,
+    //add font in vd 51
+    // install other font family :vd 53 GT Sectra Fine
+      
+      
+      ),
+      
       home: SplashView(),
     );
   }
