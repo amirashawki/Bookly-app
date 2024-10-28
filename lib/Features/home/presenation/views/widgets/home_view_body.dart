@@ -2,6 +2,7 @@ import 'package:bookly/Features/home/presenation/views/widgets/best_seller_item.
 import 'package:bookly/Features/home/presenation/views/widgets/card_Book.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/custom_appBar.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/list_of_books.dart';
+import 'package:bookly/constant.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 
@@ -29,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
               ),
               Text(
                 'Best Saller',
-                style: Styles.textStyle18,
+                style: Styles.textStyle18.copyWith(fontFamily: kGTSectraFine),
               ),
               const SizedBox(
                 height: 15,

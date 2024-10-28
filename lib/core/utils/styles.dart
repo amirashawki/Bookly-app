@@ -1,3 +1,4 @@
+import 'package:bookly/constant.dart';
 import 'package:flutter/material.dart';
 
 // اول حاجة بنركز عليها font size
@@ -8,18 +9,10 @@ abstract class Styles {
       TextStyle(fontWeight: FontWeight.w600, fontSize: 18);
 
   static const textStyle20 = TextStyle(
-      fontWeight: FontWeight.normal,
-      fontSize: 20,
-      fontFamily: '' //add font GT Sectra Fine font
-
-      );
+      fontWeight: FontWeight.normal, fontSize: 20);
 
   static const textStyle30 = TextStyle(
-      fontWeight: FontWeight.normal,
-      fontSize: 30,
-      fontFamily: '' //add font GT Sectra Fine font
-
-      );
+      fontWeight: FontWeight.normal, fontSize: 30, fontFamily: kGTSectraFine);
   static const textStyle14 =
       TextStyle(fontWeight: FontWeight.normal, fontSize: 14);
   static const textStyle16 =
