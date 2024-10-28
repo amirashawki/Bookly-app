@@ -1,4 +1,5 @@
 import 'package:bookly/Features/home/presenation/views/widgets/best_seller_item.dart';
+import 'package:bookly/Features/home/presenation/views/widgets/best_seller_list.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/card_Book.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/custom_appBar.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/list_of_books.dart';
@@ -14,9 +15,9 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: SingleChildScrollView(
+        body: CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -28,26 +29,26 @@ class HomeViewBody extends StatelessWidget {
               const SizedBox(
                 height: 30,
               ),
-              Text(
-                'Best Saller',
-                style: Styles.textStyle18.copyWith(fontFamily: kGTSectraFine),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Text(
+                  'Best Saller',
+                  style: Styles.textStyle18.copyWith(fontFamily: kGTSectraFine),
+                ),
               ),
               const SizedBox(
                 height: 15,
               ),
-              ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: 6,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 10),
-                      child: BestSellerItem(),
-                    );
-                  }),
             ],
           ),
         ),
-      ),
-    );
+        SliverFillRemaining(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: bestSellerList(),
+          ),
+        )
+      ],
+    ));
   }
 }
