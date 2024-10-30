@@ -17,7 +17,7 @@ class ImageBookSection extends StatelessWidget {
           child: cardofBook(),
         ),
         const SizedBox(
-          height: 8,
+          height: 20,
         ),
         Text(
           'The Jungle Book',
@@ -48,4 +48,3 @@ class ImageBookSection extends StatelessWidget {
     );
   }
 }
-
