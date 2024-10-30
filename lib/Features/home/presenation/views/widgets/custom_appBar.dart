@@ -1,7 +1,9 @@
 import 'package:bookly/constant.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
+import 'package:go_router/go_router.dart';
 
 class customAppBar extends StatelessWidget {
   const customAppBar({
@@ -18,7 +20,13 @@ class customAppBar extends StatelessWidget {
       ),
       actions: [
         IconButton(
-            onPressed: () {}, icon: Icon(FontAwesomeIcons.magnifyingGlass,size: 18,))
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kSearchView);
+            },
+            icon: Icon(
+              FontAwesomeIcons.magnifyingGlass,
+              size: 18,
+            ))
       ],
     );
   }
