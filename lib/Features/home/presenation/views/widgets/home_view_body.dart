@@ -33,7 +33,7 @@ class HomeViewBody extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
                   'Best Saller',
-                  style: Styles.textStyle18.copyWith(fontFamily: kGTSectraFine),
+                  style: Styles.textStyle16.copyWith(fontFamily: kGTSectraFine),
                 ),
               ),
               const SizedBox(
