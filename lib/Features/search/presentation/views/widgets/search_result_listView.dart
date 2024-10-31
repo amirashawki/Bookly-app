@@ -9,10 +9,9 @@ class SearchResultList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-   
         itemCount: 6,
         itemBuilder: (context, index) {
-          return Padding(
+          return const Padding(
             padding: const EdgeInsets.only(bottom: 10),
             child: BookItem(),
           );
