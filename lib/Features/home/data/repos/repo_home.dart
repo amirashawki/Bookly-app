@@ -6,5 +6,5 @@ import 'package:dartz/dartz.dart';
 
 abstract class RepoHome {
   Future<Either<Failures, List<BookModel>>> fetchFeatureBooks();
-  Future<Either<Failures, List<BookModel>>> fetchBestSellerBooks();
+  Future<Either<Failures, List<BookModel>>> fetchNewsetBooks();
 }
