@@ -5,7 +5,7 @@ import 'package:bookly/core/utils/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
-class RepoHomeImpl implements RepoHome {
+class RepoHomeImpl implements HomeRepo {
   final ApiServices apiServices;
 
   RepoHomeImpl(this.apiServices);
@@ -29,12 +29,10 @@ class RepoHomeImpl implements RepoHome {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async{
-
-      try {
+  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async {
+    try {
       var data = await apiServices.get(
-          endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks');
+          endPoint: 'volumes?q=subject:programming&Filtering=free-ebooks');
       List<BookModel> Books = [];
       for (var item in data['items']) {
         Books.add(item);
@@ -46,6 +44,5 @@ class RepoHomeImpl implements RepoHome {
       }
       return (left(ServerFailure(e.toString())));
     }
-   
   }
 }
