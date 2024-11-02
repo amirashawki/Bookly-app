@@ -5,6 +5,6 @@ import 'package:bookly/core/utils/errors/failures.dart';
 import 'package:dartz/dartz.dart';
 
 abstract class RepoHome {
-  Future<Either<Failures, List<BookModel>>> fetchFeatureBooks();
-  Future<Either<Failures, List<BookModel>>> fetchNewsetBooks();
+  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks();
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks();
 }
