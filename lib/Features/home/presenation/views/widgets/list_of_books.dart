@@ -18,6 +18,7 @@ class FeaturedBookslist extends StatelessWidget {
           return Container(
             height: MediaQuery.of(context).size.height * 0.25,
             child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
                 itemCount: 6,
                 itemBuilder: (context, index) {
