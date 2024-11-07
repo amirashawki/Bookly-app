@@ -1,4 +1,4 @@
-import 'package:bookly/Features/home/presenation/views/widgets/best_seller_item.dart';
+import 'package:bookly/Features/home/presenation/views/widgets/Newest_Book_Item%20.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultList extends StatelessWidget {
@@ -13,7 +13,8 @@ class SearchResultList extends StatelessWidget {
         itemBuilder: (context, index) {
           return const Padding(
             padding: const EdgeInsets.only(bottom: 10),
-            child: BookItem(),
+            // child: NewestBookItem(),
+            child: Text('fgh'),
           );
         });
   }

@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class cardofBook extends StatelessWidget {
-  const cardofBook({
+class ImageofBook extends StatelessWidget {
+  const ImageofBook({
     super.key,
     required this.urlImage,
   });

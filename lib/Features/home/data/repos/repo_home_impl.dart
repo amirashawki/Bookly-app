@@ -9,15 +9,15 @@ class RepoHomeImpl implements HomeRepo {
   final ApiServices apiServices;
 
   RepoHomeImpl(this.apiServices);
+
   @override
-  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async {
     try {
       var data = await apiServices.get(
-          endPoint:
-              'volumes?q=subject:programming&Filtering=free-ebooks&sorting=newest');
+          endPoint: 'volumes?q=subject:programming&Filtering=free-ebooks');
       List<BookModel> Books = [];
       for (var item in data['items']) {
-        Books.add(item);
+        Books.add(BookModel.fromJson(item));
       }
       return right(Books);
     } on Exception catch (e) {
@@ -29,13 +29,14 @@ class RepoHomeImpl implements HomeRepo {
   }
 
   @override
-  Future<Either<Failure, List<BookModel>>> fetchFeatureBooks() async {
+  Future<Either<Failure, List<BookModel>>> fetchNewsetBooks() async {
     try {
       var data = await apiServices.get(
-          endPoint: 'volumes?q=subject:programming&Filtering=free-ebooks');
+          endPoint:
+              'volumes?q=subject:programming&Filtering=free-ebooks&sorting=newest');
       List<BookModel> Books = [];
       for (var item in data['items']) {
-        Books.add(item);
+        Books.add(BookModel.fromJson(item));
       }
       return right(Books);
     } on Exception catch (e) {

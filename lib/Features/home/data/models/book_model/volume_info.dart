@@ -12,6 +12,9 @@ class VolumeInfo extends Equatable {
   final List<IndustryIdentifier>? industryIdentifiers;
   final ReadingModes? readingModes;
   final int? pageCount;
+  final int? averageRating;
+  final List<String>? authors;
+
   final String? printType;
   final String? maturityRating;
   final bool? allowAnonLogging;
@@ -24,6 +27,8 @@ class VolumeInfo extends Equatable {
   final String? canonicalVolumeLink;
 
   const VolumeInfo({
+    this.authors,
+    this.averageRating,
     this.title,
     this.subtitle,
     this.publisher,
@@ -46,6 +51,7 @@ class VolumeInfo extends Equatable {
         title: json['title'] as String?,
         subtitle: json['subtitle'] as String?,
         publisher: json['publisher'] as String?,
+        authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
         industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
             ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
             .toList(),
@@ -54,6 +60,7 @@ class VolumeInfo extends Equatable {
             : ReadingModes.fromJson(
                 json['readingModes'] as Map<String, dynamic>),
         pageCount: json['pageCount'] as int?,
+        averageRating: json['averageRating'] as int?,
         printType: json['printType'] as String?,
         maturityRating: json['maturityRating'] as String?,
         allowAnonLogging: json['allowAnonLogging'] as bool?,
@@ -62,9 +69,8 @@ class VolumeInfo extends Equatable {
             ? null
             : PanelizationSummary.fromJson(
                 json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks: 
-      
-             ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+        imageLinks:
+            ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,

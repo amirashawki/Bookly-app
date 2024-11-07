@@ -1,4 +1,4 @@
-import 'package:bookly/Features/home/presenation/views/widgets/best_seller_list.dart';
+import 'package:bookly/Features/home/presenation/views/widgets/Newset_books_list.dart';
 
 import 'package:bookly/Features/home/presenation/views/widgets/custom_appBar.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/list_of_books.dart';
@@ -15,23 +15,24 @@ class HomeViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-             const customAppBar(),
+              const customAppBar(),
               const SizedBox(
                 height: 20,
               ),
-            const  FeaturedBookslist(),
+              const FeaturedBookslist(),
               const SizedBox(
                 height: 30,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Text(
-                  'Best Saller',
+                  'Newset Books',
                   style: Styles.textStyle16.copyWith(fontFamily: kGTSectraFine),
                 ),
               ),
@@ -44,7 +45,7 @@ class HomeViewBody extends StatelessWidget {
         SliverFillRemaining(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: bestSellerList(),
+            child: NewsetBooksList(),
           ),
         )
       ],

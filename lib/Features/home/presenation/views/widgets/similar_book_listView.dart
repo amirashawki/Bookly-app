@@ -1,4 +1,4 @@
-import 'package:bookly/Features/home/presenation/views/widgets/best_seller_item.dart';
+import 'package:bookly/Features/home/presenation/views/widgets/Newest_Book_Item%20.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/card_Book.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +15,9 @@ class SimilarBookListview extends StatelessWidget {
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.only(right: 8),
-              child: cardofBook(urlImage: '',),
+              child: ImageofBook(
+                urlImage: '',
+              ),
             );
           }),
     );

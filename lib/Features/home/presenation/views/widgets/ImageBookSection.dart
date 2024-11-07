@@ -14,7 +14,9 @@ class ImageBookSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * 0.3),
-          child: cardofBook(urlImage: '',),
+          child: ImageofBook(
+            urlImage: '',
+          ),
         ),
         const SizedBox(
           height: 20,
@@ -38,6 +40,8 @@ class ImageBookSection extends StatelessWidget {
           height: 6,
         ),
         BookRating(
+    rating: 5,
+    count: 2,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(

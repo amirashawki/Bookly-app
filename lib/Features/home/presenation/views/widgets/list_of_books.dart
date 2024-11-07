@@ -18,21 +18,23 @@ class FeaturedBookslist extends StatelessWidget {
           return Container(
             height: MediaQuery.of(context).size.height * 0.25,
             child: ListView.builder(
-              physics: const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: 6,
+                itemCount: state.books.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: cardofBook(urlImage:  state.books[index].volumeInfo.imageLinks.thumbnail,),
+                    padding: const EdgeInsets.only(right: 13),
+                    child: ImageofBook(
+                      urlImage:
+                          state.books[index].volumeInfo.imageLinks.thumbnail,
+                    ),
                   );
                 }),
           );
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errMessage: state.errMessage);
         } else {
-          return const
-           CustomProgressIndactor();
+          return const CustomProgressIndactor();
         }
       },
     );
