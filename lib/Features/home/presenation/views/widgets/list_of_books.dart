@@ -26,7 +26,7 @@ class FeaturedBookslist extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 13),
                     child: ImageofBook(
                       urlImage:
-                          state.books[index].volumeInfo.imageLinks.thumbnail,
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ??'',
                     ),
                   );
                 }),

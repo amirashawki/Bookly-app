@@ -14,19 +14,21 @@ class VolumeInfo extends Equatable {
   final int? pageCount;
   final int? averageRating;
   final List<String>? authors;
+  final List<String>? categories;
 
   final String? printType;
   final String? maturityRating;
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
-  final ImageLinks imageLinks;
+  final ImageLinks? imageLinks;
   final String? language;
   final String? previewLink;
   final String? infoLink;
   final String? canonicalVolumeLink;
 
   const VolumeInfo({
+    this.categories,
     this.authors,
     this.averageRating,
     this.title,
@@ -51,6 +53,7 @@ class VolumeInfo extends Equatable {
         title: json['title'] as String?,
         subtitle: json['subtitle'] as String?,
         publisher: json['publisher'] as String?,
+        categories: (json['categories'] as List<dynamic>?)?.cast<String>(),
         authors: (json['authors'] as List<dynamic>?)?.cast<String>(),
         industryIdentifiers: (json['industryIdentifiers'] as List<dynamic>?)
             ?.map((e) => IndustryIdentifier.fromJson(e as Map<String, dynamic>))
@@ -69,8 +72,9 @@ class VolumeInfo extends Equatable {
             ? null
             : PanelizationSummary.fromJson(
                 json['panelizationSummary'] as Map<String, dynamic>),
-        imageLinks:
-            ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
+        imageLinks: json['imageLinks'] == null
+            ? null
+            : ImageLinks.fromJson(json['imageLinks'] as Map<String, dynamic>),
         language: json['language'] as String?,
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,

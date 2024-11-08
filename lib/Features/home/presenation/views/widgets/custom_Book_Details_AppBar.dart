@@ -1,3 +1,4 @@
+import 'package:bookly/constant.dart';
 import 'package:flutter/material.dart';
 
 class customBookDetailsAppBar extends StatelessWidget {
@@ -8,6 +9,7 @@ class customBookDetailsAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      backgroundColor: kPrimaryColor,
       leading: IconButton(onPressed: () {}, icon: Icon(Icons.close)),
       actions: [
         IconButton(onPressed: () {}, icon: Icon(Icons.shopping_cart_outlined))

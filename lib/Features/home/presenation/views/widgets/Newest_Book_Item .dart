@@ -14,13 +14,13 @@ class NewestBookItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetaislView);
+        GoRouter.of(context).push(AppRouter.kBookDetaislView,extra: bookModel );
       },
       child: Container(
         height: 120,
         child: Row(
           children: [
-            ImageofBook(urlImage: bookModel.volumeInfo.imageLinks.thumbnail),
+            ImageofBook(urlImage: bookModel.volumeInfo.imageLinks?.thumbnail??''),
             const SizedBox(
               width: 14,
             ),
@@ -40,7 +40,10 @@ class NewestBookItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  Text(bookModel.volumeInfo.publisher!,
+                  Text(bookModel.volumeInfo.publisher ?? ''
+                  ,overflow: TextOverflow.ellipsis,
+                  maxLines: 1,
+                  
                       style: Styles.textStyle12),
                   const SizedBox(
                     height: 3,
