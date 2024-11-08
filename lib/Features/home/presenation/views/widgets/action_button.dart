@@ -14,7 +14,7 @@ class ActionButton extends StatelessWidget {
         children: [
           Expanded(
               child: customButton(
-            textColor: '19.99&',
+            textColor: 'Free',
             color: Colors.black,
             backgroundColor: Colors.white,
             borderRadius: BorderRadius.only(
@@ -22,7 +22,7 @@ class ActionButton extends StatelessWidget {
           )),
           Expanded(
               child: customButton(
-            textColor: 'Free preview',
+            textColor: 'Preview',
             fontSize: 13,
             color: Colors.white,
             backgroundColor: Color(0xffEF8262),

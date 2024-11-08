@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/ImageBookSection.dart';
 import 'package:bookly/Features/home/presenation/views/widgets/Similar_Books_Section.dart';
 
@@ -6,8 +7,8 @@ import 'package:bookly/Features/home/presenation/views/widgets/custom_Book_Detai
 import 'package:flutter/material.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
-
+  const BookDetailsViewBody({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,11 +19,13 @@ class BookDetailsViewBody extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              customBookDetailsAppBar(),
-              const ImageBookSection(),
+              const customBookDetailsAppBar(),
+              ImageBookSection(
+                bookModel: bookModel,
+              ),
               const Expanded(
                 child: SizedBox(
-                  height: 45,
+                  height: 30,
                 ),
               ),
               const SimilarBooksSection(),
