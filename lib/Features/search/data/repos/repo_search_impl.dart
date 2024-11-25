@@ -15,7 +15,7 @@ class RepoSearchImpl extends RepoSearch {
     try {
   var data = await apiServices.get(
       endPoint:
-          'volumes?q=$subject:computer science&Filtering=free-ebooks&sorting=relevance');
+          'volumes?q=$subject&Filtering=free-ebooks');
   
   List<BookModel> books = [];
   for (var item in data['items']) {

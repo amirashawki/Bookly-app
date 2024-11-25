@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_icon_class/font_awesome_icon_class.dart';
 
 class customTextField extends StatelessWidget {
-  const customTextField({
+  const customTextField({this.onChanged,
     super.key,
   });
-
+final Function(String)? onChanged;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 40,
       child: TextField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           enabledBorder: buildOutlineInputBorder(),
           focusedBorder: buildOutlineInputBorder(),
